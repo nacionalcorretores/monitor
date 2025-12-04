@@ -1,0 +1,22 @@
+app = "monitor-tpmxfg"
+primary_region = "gru"
+
+[build]
+  dockerfile = "Dockerfile"
+
+[env]
+  PYTHONUNBUFFERED = "1"
+
+[processes]
+  worker = "python monitor.py"
+
+[checks]
+  [checks.alive]
+    type = "process"
+    interval = "30s"
+    timeout = "5s"
+
+[[vm]]
+  cpu_kind = "shared"
+  cpus = 1
+  memory = "1gb"
