@@ -10,12 +10,6 @@ primary_region = "gru"
 [processes]
   worker = "python monitor.py"
 
-[checks]
-  [checks.alive]
-    type = "process"
-    interval = "30s"
-    timeout = "5s"
-
 [[vm]]
   cpu_kind = "shared"
   cpus = 1
